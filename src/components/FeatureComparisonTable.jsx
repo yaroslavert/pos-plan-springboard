@@ -3,26 +3,26 @@ import { Check, X } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const features = [
-  { name: 'POS', basic: true, pro: true, enterprise: true },
-  { name: 'PPO', basic: false, pro: true, enterprise: true },
-  { name: 'Інвентаризація', basic: true, pro: true, enterprise: true },
-  { name: 'Склади в закладі', basic: '1 шт', pro: '1 шт', enterprise: '3 шт' },
-  { name: 'Мобільна каса', basic: true, pro: true, enterprise: true },
-  { name: 'Касові зміни', basic: true, pro: true, enterprise: true },
-  { name: 'Управління клієнтами', basic: true, pro: true, enterprise: true },
-  { name: 'Управління меню', basic: true, pro: true, enterprise: true },
-  { name: 'Технічна підтримка 24/7', basic: false, pro: true, enterprise: true },
-  { name: 'Столи', basic: true, pro: true, enterprise: true },
-  { name: 'Управління продажами зі смартфона', basic: false, pro: true, enterprise: true },
-  { name: 'Постачальники', basic: false, pro: true, enterprise: true },
-  { name: 'Складський облік', basic: false, pro: true, enterprise: true },
-  { name: 'Звітність та аналітика', basic: true, pro: true, enterprise: true },
-  { name: 'Товари та тех-карти', basic: '100 шт', pro: '200 шт', enterprise: 'Необмежено' },
-  { name: 'Фінансовий облік', basic: false, pro: true, enterprise: true },
-  { name: 'Програми лояльності', basic: false, pro: true, enterprise: true },
-  { name: 'Управління доставками', basic: false, pro: false, enterprise: true },
-  { name: 'Акції', basic: false, pro: true, enterprise: true },
-  { name: 'Бронювання столів', basic: false, pro: true, enterprise: true },
+  { name: 'POS', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'PPO', lite: false, optimal: true, professional: true, expert: true },
+  { name: 'Інвентаризація', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Склади в закладі', lite: '1 шт', optimal: '1 шт', professional: '2 шт', expert: '3 шт' },
+  { name: 'Мобільна каса', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Касові зміни', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Управління клієнтами', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Управління меню', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Технічна підтримка 24/7', lite: false, optimal: false, professional: true, expert: true },
+  { name: 'Столи', lite: true, optimal: true, professional: true, expert: true },
+  { name: 'Управління продажами зі смартфона', lite: false, optimal: true, professional: true, expert: true },
+  { name: 'Постачальники', lite: false, optimal: true, professional: true, expert: true },
+  { name: 'Складський облік', lite: false, optimal: true, professional: true, expert: true },
+  { name: 'Звітність та аналітика', lite: false, optimal: true, professional: true, expert: true },
+  { name: 'Товари та тех-карти', lite: '100 шт', optimal: '200 шт', professional: '500 шт', expert: 'Необмежено' },
+  { name: 'Фінансовий облік', lite: false, optimal: false, professional: true, expert: true },
+  { name: 'Програми лояльності', lite: false, optimal: false, professional: true, expert: true },
+  { name: 'Управління доставками', lite: false, optimal: false, professional: false, expert: true },
+  { name: 'Акції', lite: false, optimal: false, professional: true, expert: true },
+  { name: 'Бронювання столів', lite: false, optimal: false, professional: true, expert: true },
 ];
 
 const FeatureComparisonTable = () => {
@@ -33,19 +33,21 @@ const FeatureComparisonTable = () => {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-1/3">Функція</TableHead>
-              <TableHead>Basic</TableHead>
-              <TableHead>Pro</TableHead>
-              <TableHead>Enterprise</TableHead>
+              <TableHead className="w-1/5">Функція</TableHead>
+              <TableHead>Lite</TableHead>
+              <TableHead>Optimal</TableHead>
+              <TableHead>Professional</TableHead>
+              <TableHead>Expert</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {features.map((feature, index) => (
               <TableRow key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
                 <TableCell className="font-medium">{feature.name}</TableCell>
-                <TableCell>{renderFeature(feature.basic)}</TableCell>
-                <TableCell>{renderFeature(feature.pro)}</TableCell>
-                <TableCell>{renderFeature(feature.enterprise)}</TableCell>
+                <TableCell>{renderFeature(feature.lite)}</TableCell>
+                <TableCell>{renderFeature(feature.optimal)}</TableCell>
+                <TableCell>{renderFeature(feature.professional)}</TableCell>
+                <TableCell>{renderFeature(feature.expert)}</TableCell>
               </TableRow>
             ))}
           </TableBody>

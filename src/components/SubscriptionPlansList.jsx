@@ -6,22 +6,28 @@ import FeatureComparisonTable from './FeatureComparisonTable';
 
 const plans = [
   {
-    name: 'Basic',
-    price: '₴499',
-    description: 'Для малого бізнесу',
+    name: 'Lite',
+    price: '₴299',
+    description: 'Для початківців',
     features: ['POS', 'Інвентаризація', 'Мобільна каса', 'Управління меню'],
   },
   {
-    name: 'Pro',
-    price: '₴999',
-    description: 'Для зростаючого бізнесу',
-    features: ['Все з Basic', 'PPO', 'Технічна підтримка 24/7', 'Складський облік', 'Програми лояльності'],
+    name: 'Optimal',
+    price: '₴599',
+    description: 'Для малого бізнесу',
+    features: ['Все з Lite', 'PPO', 'Складський облік', 'Звітність та аналітика'],
   },
   {
-    name: 'Enterprise',
+    name: 'Professional',
+    price: '₴999',
+    description: 'Для зростаючого бізнесу',
+    features: ['Все з Optimal', 'Технічна підтримка 24/7', 'Програми лояльності', 'Фінансовий облік'],
+  },
+  {
+    name: 'Expert',
     price: '₴1999',
     description: 'Для великого бізнесу',
-    features: ['Все з Pro', 'Необмежені товари та тех-карти', 'Управління доставками', 'Розширена аналітика'],
+    features: ['Все з Professional', 'Управління доставками', 'Розширена аналітика', 'Необмежені товари та тех-карти'],
   },
 ];
 
@@ -29,7 +35,7 @@ const SubscriptionPlansList = () => {
   return (
     <div className="container mx-auto py-12">
       <h2 className="text-3xl font-bold text-center mb-8">Оберіть свій тарифний план</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {plans.map((plan, index) => (
           <Card key={index} className="flex flex-col">
             <CardHeader>
