@@ -6,7 +6,7 @@ const Index = () => {
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow">
         <div className="container mx-auto py-6">
-          <h1 className="text-3xl font-bold text-gray-900">Point of Sale Subscription Plans</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Тарифні плани для POS-системи</h1>
         </div>
       </header>
       <main>
